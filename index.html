@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor de Correo</title>
+    <link rel="stylesheet" href="correo.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>PonyMail</h1>
+            <input type="search" placeholder="Buscar correo">
+        </header>
+        <div class="content">
+            <nav class="sidebar">
+                <button class="compose">Redactar</button>
+                <ul>
+                    <li>Bandeja de entrada</li>
+                    <li>Enviados</li>
+                    <li>Borradores</li>
+                    <li>Spam</li>
+                    <li>Papelera</li>
+                </ul>
+            </nav>
+            <main class="editor">
+                <input type="text" id="to" placeholder="Para">
+                <input type="text" id="subject" placeholder="Asunto">
+                
+                <div class="toolbar">
+                    <label for="colorPicker">Color:</label>
+                    <input type="color" id="colorPicker" onchange="changeColor()">
+                    
+                    <label for="fontSize">Tamaño:</label>
+                    <select id="fontSize" onchange="changeFontSize()">
+                        <option value="12px">12px</option>
+                        <option value="14px">14px</option>
+                        <option value="16px" selected>16px</option>
+                        <option value="18px">18px</option>
+                        <option value="20px">20px</option>
+                    </select>
+                    
+                    <label for="fontStyle">Estilo:</label>
+                    <select id="fontStyle" onchange="changeFontStyle()">
+                        <option value="normal" selected>Normal</option>
+                        <option value="italic">Cursiva</option>
+                        <option value="bold">Negrita</option>
+                    </select>
+                </div>
+                
+                <textarea id="body" placeholder="Escribe tu mensaje..."></textarea>
+                
+                <div class="footer">
+                    <button onclick="enviarCorreo()">Enviar</button>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="correo.js"></script>
+</body>
+</html>
